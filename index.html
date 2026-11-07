@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vanshika Sharma | Personal Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --purple: #8062a8;
+    --dark: #342a40;
+    --lavender: #eee6f6;
+    --cream: #fcfaff;
+    --muted: #81778b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 9%;
+    background: rgba(252,250,255,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #eee8f4;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--purple);
+}
+
+.hero {
+    min-height: 570px;
+    padding: 110px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 85% 20%, #e5d7f3, transparent 32%),
+      linear-gradient(120deg, #f8f3fc, #eee5f6);
+}
+
+.tag {
+    color: var(--purple);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1.12;
+    max-width: 750px;
+    font-weight: 500;
+}
+
+.hero h1 span {
+    color: var(--purple);
+    font-style: italic;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 550px;
+    margin: 24px 0;
+    font-size: 16px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.section-label {
+    color: var(--purple);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 55px;
+    align-items: center;
+    background: white;
+}
+
+.about-art {
+    min-height: 300px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #eee4f7, #d8c7ea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.about-art span {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    color: #8062a8;
+    font-style: italic;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.education {
+    background: #f5effa;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #eee6f5;
+    box-shadow: 0 8px 30px rgba(80,50,110,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(80,50,110,0.10);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.skills {
+    background: white;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    background: #f4eef9;
+    padding: 22px;
+    border-radius: 15px;
+    color: #72538f;
+    text-align: center;
+    font-weight: 600;
+}
+
+.interests {
+    background: #f5effa;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.interest {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+}
+
+.interest h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.interest p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.projects {
+    background: white;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-number {
+    color: var(--purple);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.contact {
+    background: linear-gradient(130deg, #e9ddf4, #f7f0fb);
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.contact a {
+    color: var(--purple);
+    font-weight: bold;
+}
+
+footer {
+    background: #342a40;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+footer span {
+    color: #d6b9ee;
+}
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    nav div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 75px 7%;
+    }
+
+    section {
+        padding: 60px 7%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .interest-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Vanshika.</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<header class="hero" id="home">
+
+    <div class="tag">Welcome to my little corner of the internet</div>
+
+    <h1>Hello, I'm <span>Vanshika Sharma.</span></h1>
+
+    <p>
+        A curious mind, a technology enthusiast and
+        a first-year Computer Science student.
+        Learning, exploring and creating my own path
+        in the digital world.
+    </p>
+
+    <div>
+        <a href="#about" class="button">Discover My Journey →</a>
+    </div>
+
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-art">
+        <span>Dream.<br>Learn.<br>Become.</span>
+    </div>
+
+    <div class="about-text">
+
+        <div class="section-label">A little about me</div>
+
+        <h2 class="section-title">Getting to know Vanshika</h2>
+
+        <p>
+            Hello! I'm Vanshika Sharma, a first-year
+            B.Tech Computer Science Engineering student
+            at JECRC University, specialising in Cybersecurity.
+        </p>
+
+        <p>
+            I'm at the beginning of my technology journey,
+            exploring programming, artificial intelligence,
+            cybersecurity and web development.
+        </p>
+
+        <p>
+            I believe in continuous learning, staying curious
+            and turning new ideas into meaningful experiences.
+            This portfolio is a small reflection of my journey.
+        </p>
+
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+
+    <div class="section-label">My academic journey</div>
+    <h2 class="section-title">Education</h2>
+
+    <div class="card">
+
+        <div class="project-number">CURRENTLY PURSUING</div>
+
+        <h3>Bachelor of Technology</h3>
+
+        <p>Computer Science Engineering</p>
+
+        <p>JECRC University, Jaipur, Rajasthan</p>
+
+        <p>Specialisation: Cybersecurity</p>
+
+        <p>First Year</p>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+
+    <div class="section-label">Growing every day</div>
+    <h2 class="section-title">My Skills & Learning</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">C Programming</div>
+        <div class="skill">AI Tools</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Problem Solving</div>
+
+    </div>
+
+    <p style="margin-top:22px;color:#81778b;font-size:14px;">
+        Always learning. Always evolving.
+    </p>
+
+</section>
+
+<!-- INTERESTS -->
+<section class="interests">
+
+    <div class="section-label">What inspires me</div>
+    <h2 class="section-title">Areas I'm Exploring</h2>
+
+    <div class="interest-grid">
+
+        <div class="interest">
+            <h3>01. Cybersecurity</h3>
+            <p>
+                Exploring digital safety, online security
+                and the fascinating world of cyber defence.
+            </p>
+        </div>
+
+        <div class="interest">
+            <h3>02. Artificial Intelligence</h3>
+            <p>
+                Understanding intelligent systems and
+                how AI can shape our future.
+            </p>
+        </div>
+
+        <div class="interest">
+            <h3>03. Web Development</h3>
+            <p>
+                Learning to build creative, useful
+                and user-friendly websites.
+            </p>
+        </div>
+
+        <div class="interest">
+            <h3>04. Technology & Innovation</h3>
+            <p>
+                Discovering new ideas, solving problems
+                and exploring digital possibilities.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+    <div class="section-label">Things I'm building</div>
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="card">
+            <div class="project-number">PROJECT 01</div>
+            <h3>Personal Portfolio Website</h3>
+            <p>
+                A personal website designed using HTML
+                and CSS to showcase my education,
+                interests and learning journey.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>FAIDS Project</h3>
+            <p>
+                Exploring a team-based concept for
+                Fake Identity, Address and Device
+                Screening through technology.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-label">Let's connect</div>
+
+    <h2>Have an idea? Let's talk.</h2>
+
+    <p>
+        I'm always open to learning, sharing ideas
+        and connecting with curious minds.
+    </p>
+
+    <p>Email: <a href="mailto:vanshikasharma.cs06@gmail.com">
+        Add your email here
+    </a></p>
+
+    <a href="#home" class="button">Back to top ↑</a>
+
+</section>
+
+<footer>
+
+    <p>
+        Designed & created by <span>Vanshika Sharma</span>
+    </p>
+
+    <p>© 2026 | A little space for big dreams.</p>
+
+</footer>
+
+</body>
+</html>
